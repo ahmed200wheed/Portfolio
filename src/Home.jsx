@@ -5,7 +5,7 @@ export default function Home() {
         
         {/* اليمين */}
         <div className="md:text-right md:flex md:flex-col md:gap-6">
-          <h1 className="text-[3.2em] leading-[1.1] md:text-7xl font-bold mb-4">
+          <h1 className="text-[3.2em] text-white leading-[1.1] md:text-7xl font-bold mb-4">
             أهلاً، أنا أحمد وحيد
           </h1>
           <p className="text-4xl font-bold text-center md:text-5xl md:text-right text-blue-500  mb-6">
@@ -24,7 +24,7 @@ export default function Home() {
           
         </div>
 
-        <div className="flex md:flex-row flex-col md:justify-start md:gap-36 justify-around mt-15 md:mt-60 w-full gap-3 ">
+        <div className="flex md:flex-row flex-col md:justify-start md:gap-36 justify-around mt-15 md:mt-56 w-full gap-3 ">
             <a
               href="#projects"
               className="px-6 py-3 w-full md:w-64 rounded-xl bg-blue-600 text-white md:text-lg shadow-md hover:shadow-lg hover:scale-105 transition"

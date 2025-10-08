@@ -7,7 +7,7 @@ export default function Projects() {
       id: uuidv4(),
       title: "To-Do-List",
       description: "موقع عملي يحتوي علي قائمة مهام",
-      image: "public/img/to do list imege.png",
+      image: `${import.meta.env.BASE_URL}img/to-do-list-imege.png`,
       demo: "https://ahmed200wheed.github.io/To-Do-List/",
       
     },
@@ -15,21 +15,21 @@ export default function Projects() {
       id: uuidv4(),
       title: "Form",
       description: "فورم بسيط يحتوي علي الاسم والعمر ورقم الهاتف وبعض الحقول الاخري مع رسالة تاكيد بعد ارسال البيانات (البيانات لن تذهب لاي مكان هي فقط للتدريب ولن اطلع عليها)",
-      image: "public/img/form.png",
+      image: `${import.meta.env.BASE_URL}img/form.png`,
       demo: "https://ahmed200wheed.github.io/Form/",
     },
     {
       id: uuidv4(),
       title: "CRUDS",
       description: "(CRUDS) نظام ادارة منتجات ",
-      image: "public/img/CRUD Imeg.png",
+      image: `${import.meta.env.BASE_URL}img/CRUD-Imeg.png`,
       demo: " https://ahmed200wheed.github.io/CRUDS/",
     },
   ];
 
   return (
     <section
-      className="w-full h-screen flex flex-col justify-start py-30 md:justify-center "
+      className="w-full min-h-screen flex flex-col justify-start py-20 md:justify-center "
       id="projects"
     >
       <div className="container m-auto px-6">

@@ -7,36 +7,42 @@ export default function Header() {
 
   
 useEffect(() => {
-    const handleScroll = () => {
-      const homeSection = document.getElementById("home");
-      const projectsSection = document.getElementById("projects");
-      const contactSection = document.getElementById("contact");
-      const scrollY = window.scrollY;
+  const handleScroll = () => {
+    const projectsSection = document.getElementById("projects");
+    const contactSection = document.getElementById("contact");
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
 
-      if (projectsSection && scrollY >= projectsSection.offsetTop - 100) {
-        setActive("projects");
-      } else if (homeSection && scrollY >= homeSection.offsetTop - 100) {
-        setActive("home");
-      } else if (contactSection && scrollY >= contactSection.offsetTop - 100) {
+    if (
+      contactSection &&
+      scrollY + windowHeight >= contactSection.offsetTop + 100
+    ) {
       setActive("contact");
-      }
-    };
+    } else if (
+      projectsSection &&
+      scrollY + 100 >= projectsSection.offsetTop
+    ) {
+      setActive("projects");
+    } else {
+      setActive("home");
+    }
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 
   return (
     <header className="fixed w-full z-50 top-0 left-0 bg-white/10 backdrop-blur-sm rounded-b-2xl border-b border-white/20 shadow-xl/20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-4">
-            <div className="w-18 h-18 rounded-full flex items-center justify-center bg-blue-600 text-white font-bold ">
-              <img src="public/img/بروفايل.jpg"
+            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-blue-600 text-white font-bold ">
+              <img src={`${import.meta.env.BASE_URL}img/بروفايل.jpg`}
               alt="My photo"
-              className="h-18 w-18 rounded-full "
+              className="h-16 w-16 rounded-full "
                />
             </div>
             <span className="font-bold text-blue-500 hover:text-white hover:tracking-wide transition-all text-2xl ">Ahmed Wheed</span>
@@ -72,10 +78,10 @@ useEffect(() => {
           {/* Mobile menu button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-md border text-white "
+            className="md:hidden p-2 rounded-md border text-white  "
             aria-label="Open menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
